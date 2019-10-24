@@ -1,38 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <link href="app.css" rel="stylesheet">
-  <script type="text/javascript" src="app.js"></script>
-  <title>Simple ToDo- list</title>
-</head>
-
-<body>
-<header>
-<h1>PAGE LOGO GOES HERE</h1>
-</header>
-<nav>
-  <ul>
-  Page Nav goes here
-  </ul>
-</nav>
-<p>Enter some text in the field below</p>
-<fieldset>
-<form name="theform" method="post">
-  <p>Activity:
-  <input type="text" id="newActivity" placeholder="Enter some text here" size="50" required autofocus />
-  <input type="button" name="add" value="Add" onclick="myFunction();"></p>
-  <br/>
-<header>
-  <h2>Doings</h2>
-  </header>
-  <textarea cols="10" rows"10" name="doings">
-    Activities will appear here
-    </textarea>
-    </form>
-    </fieldset>
-  <p>Section 2 content goes here</p>
-  <input type="reset" value="Clear this form" />
-<footer>Page footer goes here</footer>
-</body>
+    <head>
+        <meta charset="utf-8">
+        <title>Simple ToDo-list</title>
+        <link href="./app.css" rel="stylesheet"/>
+        <script type="text/javascript" src="./app.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1>Simple ToDo-list</h1>
+            <img src="./road_construction.png" alt="Road construction sign."/>
+            <div style="clear: both;"></div>
+        </header>
+        <div id="content">
+            <form id="newItem">
+                <fieldset>
+                    <label for="todoItem">New ToDo item:</label>
+                    <input type="text" />
+                    <button type="submit">Add</button>
+                </fieldset>
+            </form>
+            <form id="todoItems">
+                <fieldset>
+                    <h2>ToDo-items</h2>
+                    <hr/>
+                    <select id="todoItemList" name="todoItemList">
+                        <!-- Item list goes here -->
+                    </select>
+                    <button type="submit">Mark as done</button>
+                </fieldset>
+            </form>
+            <div id="doneItems">
+                <fieldset>
+                    <h2>Done ToDo-items</h2>
+                    <hr/>
+                    <ul>
+                        <!-- Done Todo-items list goes here -->
+                    </ul>
+                </fieldset>
+                <!-- Done items list goes here -->
+            </div>
+        </div>
+        <footer>&copy; 2019, Kirsi Talasterä</footer>
+    </body>
 </html>
