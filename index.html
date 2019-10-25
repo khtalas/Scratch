@@ -3,44 +3,44 @@
     <head>
         <meta charset="utf-8">
         <title>Simple ToDo-list</title>
+        <link href="./w3.css" rel="stylesheet"/>
         <link href="./app.css" rel="stylesheet"/>
         <script type="text/javascript" src="./app.js"></script>
     </head>
     <body>
-        <header>
+        <header class="w3-panel w3-khaki">
             <h1>Simple ToDo-list</h1>
             <img src="./road_construction.png" alt="Road construction sign."/>
             <div style="clear: both;"></div>
         </header>
-        <div id="content">
-            <form id="newItem">
+        <div id="content" class="w3-panel">
+            <form id="newItem" class="w3-container">
                 <fieldset>
                     <label for="todoItem">New ToDo item:</label>
-                    <input type="text" />
+                    <input id="todoItem" type="text" class="w3-input"/>
                     <button type="submit">Add</button>
                 </fieldset>
             </form>
-            <form id="todoItems">
+            <form id="todoItems" class="w3-container">
                 <fieldset>
                     <h2>ToDo-items</h2>
                     <hr/>
                     <select id="todoItemList" name="todoItemList">
-                        <!-- Item list goes here -->
+                        <!-- Item list goes here by JS -->
                     </select>
                     <button type="submit">Mark as done</button>
                 </fieldset>
             </form>
-            <div id="doneItems">
+            <div id="doneItems" class="w3-container">
                 <fieldset>
                     <h2>Done ToDo-items</h2>
                     <hr/>
                     <ul>
-                        <!-- Done Todo-items list goes here -->
+                        <!-- Done Todo-items list goes here by JS -->
                     </ul>
                 </fieldset>
-                <!-- Done items list goes here -->
             </div>
         </div>
-        <footer>&copy; 2019, Kirsi Talasterä</footer>
+        <footer class="w3-panel w3-amber">&copy; 2019, Kirsi Talasterä</footer>
     </body>
 </html>

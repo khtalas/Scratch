@@ -1,5 +1,8 @@
 function app() {
+    // Tyhjät listat aluksi
     const todoItems = [], doneItems = [];
+    
+    // Asioiden lisääminen listaan
     const newItemForm = document.getElementById('newItem');
     newItemForm.onsubmit = function (event) {
         // Ei ladata sivua uudestaan kun lomake lähetetään
@@ -8,9 +11,11 @@ function app() {
         const itemText = itemTextInput.value;
         todoItems.push(itemText);
         updateTodoItems();
+        toggleDoneButton();
         itemTextInput.value = '';
     };
-    
+
+    // Listan asioiden valitseminen ja poisto
     const todoItemsForm = document.getElementById('todoItems');
     todoItemsForm.onsubmit = function (event) {
         // Ei ladata sivua uudestaan kun lomake lähetetään
@@ -21,8 +26,17 @@ function app() {
         todoItems.splice(removedItem, 1);
         updateTodoItems();
         updateDoneItems();
+        toggleDoneButton();
     };
+    toggleDoneButton();
 
+    // Saa poistaa vain, jos listassa on asioita
+    function toggleDoneButton() {
+        const btn = todoItemsForm.querySelector("button");
+        btn.disabled = todoItems.length === 0;
+    }
+
+    // Päivitetään tehtävien asioiden lista
     function updateTodoItems() {
         const todoItemList = document.getElementById('todoItemList');
         todoItemList.innerHTML = '';
@@ -34,7 +48,8 @@ function app() {
             todoItemList.appendChild(option);
         }
     }
-    
+
+    // Päivitetään tehtyjen asioiden lista
     function updateDoneItems() {
         const doneItemsList = document.querySelector('#doneItems ul');
         doneItemsList.innerHTML = '';
